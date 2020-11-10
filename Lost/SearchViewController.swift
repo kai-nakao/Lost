@@ -10,8 +10,10 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import Firebase
+import FloatingPanel
 
-class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, CAAnimationDelegate, FloatingPanelControllerDelegate {
+    
     @IBAction func settingButton(_ sender: Any) {
         let settingViewController = self.storyboard?.instantiateViewController(withIdentifier: "Setting")
         self.navigationController?.pushViewController(settingViewController!, animated: true)
@@ -22,19 +24,20 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
     @IBAction func postButton(_ sender: Any) {
         let stickPinViewController = self.storyboard?.instantiateViewController(withIdentifier: "StickPin")
         self.navigationController?.pushViewController(stickPinViewController!, animated: true)
+        
     }
     var locationManager = CLLocationManager()
     lazy var mapView = GMSMapView()
     
     var postArray: [PostData] = []
     var listener: ListenerRegistration!
+    var marker: GMSMarker!
+    var fpc: FloatingPanelController!
+    var selected_marker: GMSMarker!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
         
         
         
@@ -44,7 +47,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         self.outletpostButton.layer.masksToBounds = true
         
         self.outletsettingButton.layer.cornerRadius = 10.0
-        let pictures = UIImage(named: "home")
+        let pictures = UIImage(named: "camera")
         self.outletsettingButton.setImage(pictures, for: .normal)
         self.outletsettingButton.layer.masksToBounds = true
         
@@ -58,6 +61,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         mapView = GMSMapView.map(withFrame: CGRect(origin: .zero, size: view.bounds.size), camera: camera)
         mapView.settings.myLocationButton = true //右下のボタン追加する
         mapView.isMyLocationEnabled = true
+        
         
         mapView.delegate = self
         
@@ -75,18 +79,23 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         // Do any additional setup after loading the view.
     }
     func setPostData(_ postData:PostData) {
-      let marker = GMSMarker()
+        
         
       if ( postData.latitude! != nil && postData.longitude! != nil ) {
+        let marker = GMSMarker()
+        
         marker.userData = postData
         marker.position = CLLocationCoordinate2D(latitude: postData.latitude!, longitude: postData.longitude!)
         marker.title = "Lost Thing"
+        marker.icon = UIImage(named: "pin")
+        
         marker.map = mapView
       }
       else {
         print("no latitude & longitude")
       }
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             return
@@ -133,14 +142,47 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print("タップされたで！")
+        
         let postData = marker.userData as! PostData
+        
+        
+        
+        if ( selected_marker != nil) {
+            selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 50.0))
+            selected_marker = marker
+        }
+        else {
+            selected_marker = marker
+        }
+
+        marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 50.0, height: 68.0))
+        
+        
+        
+        let showPostVC = ShowPostViewController()
+        
+        marker.tracksViewChanges = true
+        
         let showPostViewController = storyboard!.instantiateViewController(withIdentifier: "ShowPost") as! ShowPostViewController
         showPostViewController.postData = postData
         
-        present(showPostViewController, animated: true)
+        if fpc != nil {
+            fpc.removePanelFromParent(animated: true)
+        }
+        fpc = FloatingPanelController(delegate: self)
+        
+        fpc.layout = MyFloatingPanelLayout()
+        fpc.set(contentViewController: showPostViewController)
+        
+        fpc.surfaceView.layer.cornerRadius = 24.0
+        fpc.surfaceView.layer.masksToBounds = true
+        fpc.isRemovalInteractionEnabled = true
+        fpc.addPanel(toParent: self)
+        
         return true
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -150,16 +192,25 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
             self.present(loginViewController!, animated: true, completion: nil)
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func imageWithImage(image: UIImage, scaledToSize newSize:CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        image.draw(in: CGRect(x: 0, y:0, width: newSize.width, height: newSize.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
     }
-    */
-
+    func floatingPanelDidRemove(_ fpc: FloatingPanelController) {
+        selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 50.0))
+    }
+}
+class MyFloatingPanelLayout: FloatingPanelLayout {
+    let position: FloatingPanelPosition = .bottom
+    let initialState: FloatingPanelState = .tip
+    var anchors: [FloatingPanelState : FloatingPanelLayoutAnchoring] {
+        return [
+            .full: FloatingPanelLayoutAnchor(absoluteInset: 350.0, edge: .top, referenceGuide: .safeArea),
+            .half: FloatingPanelLayoutAnchor(absoluteInset: 200.0, edge: .bottom, referenceGuide: .safeArea),
+            .tip:FloatingPanelLayoutAnchor(absoluteInset: 199, edge: .bottom, referenceGuide: .safeArea),
+        ]
+    }
 }

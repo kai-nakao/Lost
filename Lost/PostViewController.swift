@@ -35,7 +35,6 @@ class PostViewController: UIViewController {
                 SVProgressHUD.showError(withStatus: "画像のアップロードに失敗しました。")
                 UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                 return
-                
             }
             let name = Auth.auth().currentUser?.displayName
             let postDic = [
@@ -49,14 +48,16 @@ class PostViewController: UIViewController {
             postRef.setData(postDic)
             
             SVProgressHUD.showSuccess(withStatus: "投稿しました。")
-            UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+            UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController? .dismiss(animated: true, completion: nil)
+            
+            let navigationController = UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController as! UINavigationController
+            navigationController.popViewController(animated: true)
         }
     }
     
-    @IBAction func handleCancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,7 +13,6 @@
 		914D6B1B2542EF1700F3AB97 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D6B1A2542EF1700F3AB97 /* PostData.swift */; };
 		914D6B1D254447E800F3AB97 /* StickPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D6B1C254447E700F3AB97 /* StickPinViewController.swift */; };
 		914D6B21254AF09300F3AB97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914D6B20254AF09300F3AB97 /* GoogleService-Info.plist */; };
-		914EA03C2553C15600685961 /* launchimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 914EA03B2553C15600685961 /* launchimage.png */; };
 		9191572A253961BF00AA5CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91915729253961BF00AA5CA0 /* AppDelegate.swift */; };
 		9191572C253961BF00AA5CA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191572B253961BF00AA5CA0 /* SceneDelegate.swift */; };
 		91915731253961BF00AA5CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9191572F253961BF00AA5CA0 /* Main.storyboard */; };
@@ -35,7 +34,6 @@
 		914D6B1A2542EF1700F3AB97 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		914D6B1C254447E700F3AB97 /* StickPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickPinViewController.swift; sourceTree = "<group>"; };
 		914D6B20254AF09300F3AB97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		914EA03B2553C15600685961 /* launchimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchimage.png; sourceTree = "<group>"; };
 		91915726253961BF00AA5CA0 /* Lost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91915729253961BF00AA5CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9191572B253961BF00AA5CA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				91915743253963F100AA5CA0 /* SearchViewController.swift */,
 				9191572F253961BF00AA5CA0 /* Main.storyboard */,
 				91915732253961C700AA5CA0 /* Assets.xcassets */,
-				914EA03B2553C15600685961 /* launchimage.png */,
 				91915734253961C700AA5CA0 /* LaunchScreen.storyboard */,
 				91915737253961C700AA5CA0 /* Info.plist */,
 				914D6B20254AF09300F3AB97 /* GoogleService-Info.plist */,
@@ -189,7 +186,6 @@
 				91915736253961C700AA5CA0 /* LaunchScreen.storyboard in Resources */,
 				91915733253961C700AA5CA0 /* Assets.xcassets in Resources */,
 				91915731253961BF00AA5CA0 /* Main.storyboard in Resources */,
-				914EA03C2553C15600685961 /* launchimage.png in Resources */,
 				914D6B21254AF09300F3AB97 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
