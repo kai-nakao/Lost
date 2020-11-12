@@ -19,7 +19,6 @@
 		91915733253961C700AA5CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91915732253961C700AA5CA0 /* Assets.xcassets */; };
 		91915736253961C700AA5CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91915734253961C700AA5CA0 /* LaunchScreen.storyboard */; };
 		9191573E2539637300AA5CA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191573D2539637300AA5CA0 /* LoginViewController.swift */; };
-		91915742253963B700AA5CA0 /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91915741253963B700AA5CA0 /* ImageSelectViewController.swift */; };
 		91915744253963F100AA5CA0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91915743253963F100AA5CA0 /* SearchViewController.swift */; };
 		919157462539641900AA5CA0 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919157452539641900AA5CA0 /* PostViewController.swift */; };
 		919157482539642D00AA5CA0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919157472539642D00AA5CA0 /* SettingViewController.swift */; };
@@ -42,7 +41,6 @@
 		91915735253961C700AA5CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91915737253961C700AA5CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9191573D2539637300AA5CA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		91915741253963B700AA5CA0 /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
 		91915743253963F100AA5CA0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		919157452539641900AA5CA0 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		919157472539642D00AA5CA0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				914D6B1A2542EF1700F3AB97 /* PostData.swift */,
 				91915753253D471A00AA5CA0 /* Const.swift */,
 				914D6B1C254447E700F3AB97 /* StickPinViewController.swift */,
-				91915741253963B700AA5CA0 /* ImageSelectViewController.swift */,
 				919157472539642D00AA5CA0 /* SettingViewController.swift */,
 				919157452539641900AA5CA0 /* PostViewController.swift */,
 				91915743253963F100AA5CA0 /* SearchViewController.swift */,
@@ -257,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91915744253963F100AA5CA0 /* SearchViewController.swift in Sources */,
-				91915742253963B700AA5CA0 /* ImageSelectViewController.swift in Sources */,
 				914D6B192542E67200F3AB97 /* ShowPostViewController.swift in Sources */,
 				919157462539641900AA5CA0 /* PostViewController.swift in Sources */,
 				919157482539642D00AA5CA0 /* SettingViewController.swift in Sources */,

@@ -47,6 +47,29 @@ class SettingViewController: UIViewController {
         
         tabBarController?.selectedIndex = 0
     }
+    @IBAction func preserveButton(_ sender: Any) {
+        if let displayName = displayNameTextField.text {
+            if displayName.isEmpty {
+                SVProgressHUD.showError(withStatus: "表示名を入力してください。")
+                return
+            }
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.displayName = displayName
+                changeRequest.commitChanges { error in
+                    if let error = error {
+                        SVProgressHUD.showError(withStatus: "表示名の変更に失敗しました。")
+                        print("DEBUG_PRINT:" + error.localizedDescription)
+                        return
+                    }
+                    print("DEBUG_PRINT: [displayName = \(user.displayName!)]の設定に成功しました。")
+                    SVProgressHUD.showSuccess(withStatus: "表示名を変更しました。")
+                }
+            }
+        }
+        self.view.endEditing(true)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

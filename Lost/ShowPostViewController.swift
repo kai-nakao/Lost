@@ -21,6 +21,8 @@ class ShowPostViewController: UIViewController {
     @IBOutlet weak var showCaption: UILabel!
     @IBOutlet weak var showLocation: UILabel!
     @IBOutlet weak var showDateLabel: UILabel!
+    
+    
     @IBAction func completionReceive(_ sender: Any) {
         
         let db = Firestore.firestore()

@@ -54,6 +54,9 @@ class PostViewController: UIViewController {
             navigationController.popViewController(animated: true)
         }
     }
+    @IBAction func handleCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     

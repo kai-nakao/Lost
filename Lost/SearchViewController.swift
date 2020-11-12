@@ -47,7 +47,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         self.outletpostButton.layer.masksToBounds = true
         
         self.outletsettingButton.layer.cornerRadius = 10.0
-        let pictures = UIImage(named: "camera")
+        let pictures = UIImage(named: "mypage")
         self.outletsettingButton.setImage(pictures, for: .normal)
         self.outletsettingButton.layer.masksToBounds = true
         
@@ -57,10 +57,12 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
             self.present(loginViewController!, animated: true, completion: nil)
         }
         
+        
         let camera = GMSCameraPosition.camera(withLatitude: 37.3318, longitude: -122.0312, zoom: 17.0)
         mapView = GMSMapView.map(withFrame: CGRect(origin: .zero, size: view.bounds.size), camera: camera)
         mapView.settings.myLocationButton = true //右下のボタン追加する
         mapView.isMyLocationEnabled = true
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
         
         
         mapView.delegate = self
@@ -69,6 +71,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        
         
         self.view.addSubview(mapView)
         self.view.bringSubviewToFront(mapView)
