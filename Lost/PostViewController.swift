@@ -16,6 +16,7 @@ class PostViewController: UIViewController {
     
     var coordinate: CLLocationCoordinate2D!
     
+    
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -57,10 +58,6 @@ class PostViewController: UIViewController {
     @IBAction func handleCancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

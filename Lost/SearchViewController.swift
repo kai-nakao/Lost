@@ -148,21 +148,20 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         
         let postData = marker.userData as! PostData
         
-        
+        if fpc != nil {
+            fpc.removePanelFromParent(animated: true)
+            fpc = nil
+        }
         
         if ( selected_marker != nil) {
-            selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 50.0))
+            selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 37.0))
             selected_marker = marker
         }
         else {
             selected_marker = marker
         }
 
-        marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 50.0, height: 68.0))
-        
-        
-        
-        let showPostVC = ShowPostViewController()
+        marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 42.0, height: 47.0))
         
         marker.tracksViewChanges = true
         
@@ -173,10 +172,8 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
             fpc.removePanelFromParent(animated: true)
         }
         fpc = FloatingPanelController(delegate: self)
-        
-        fpc.layout = MyFloatingPanelLayout()
         fpc.set(contentViewController: showPostViewController)
-        
+        fpc.layout = MyFloatingPanelLayout()
         fpc.surfaceView.layer.cornerRadius = 24.0
         fpc.surfaceView.layer.masksToBounds = true
         fpc.isRemovalInteractionEnabled = true
@@ -202,9 +199,10 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         UIGraphicsEndImageContext()
         return newImage
     }
-    func floatingPanelDidRemove(_ fpc: FloatingPanelController) {
-        selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 50.0))
+    func floatingPanelWillRemove(_ fpc: FloatingPanelController) {
+        selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 37.0))
     }
+    
 }
 class MyFloatingPanelLayout: FloatingPanelLayout {
     let position: FloatingPanelPosition = .bottom
