@@ -32,6 +32,11 @@
 - Firestorage
 - GoogleMapsSDK
 
+# 投稿の仕方
+---
+トップ画面でカメラボタンを押して次の画面で落とし物を見つけた場所を長押しします。
+そうするとalertActionが出るのでどちらかを選び投稿画面に進み投稿完了です。
+![demo](https://gyazo.com/78efd74ea5358f06d6434e1e00a6d2fb/raw)
 # こだわったポイント
 ---
 - FloatingPanelの採用
