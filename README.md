@@ -48,7 +48,7 @@
 ---
 - FloatingPanelを実装したこと
 　FloatingPanelは全然記事がなく、公式の英語の記事を頑張って読んで試行錯誤しながら実装していきました。
- > https://github.com/SCENEE/FloatingPanel
+  > https://github.com/SCENEE/FloatingPanel
  
 - FloatingPanelとピンの大きさに相互性を持たせること
 特にその中でもFloatingPanelをスワイプして消した時に選択中だったピンの大きさを元に戻すことです
