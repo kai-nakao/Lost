@@ -73,7 +73,7 @@
 ```swift:SearchViewController.swift
 func floatingPanelWillRemove(_ fpc: FloatingPanelController) {
         selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 37.0))
-    }
+}
 ```
 
 初めはfloatingPanelDidRemoveメソッドを使っていたのですが、これではそのメソッドが呼ばれるスピードが遅くなってしまいました。その問題の解決のために英語の公式の記事を読んでその中で近いものを試し、やっとの思いでこのメソッドにたどり着きました。
