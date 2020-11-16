@@ -48,6 +48,6 @@
 ---
 - FloatingPanelを実装したこと
 　FloatingPanelは全然記事がなく、公式の英語の記事を頑張って読んで試行錯誤しながら実装していきました。
- <https://github.com/SCENEE/FloatingPanel
+ < https://github.com/SCENEE/FloatingPanel
 - 
 
