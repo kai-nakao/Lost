@@ -1,5 +1,11 @@
 # Lost
 
+![color:ff69b4](https://img.shields.io/badge/swift-5.0-00FF00.svg?longCache=true)
+![color:ff69b4](https://img.shields.io/badge/license-MIT-C0C0C0.svg?longCache=true)
+![color:ff69b4](https://img.shields.io/badge/Twitter-@kai20000803-FFFF00.svg?longCache=true)
+![color:ff69b4](https://img.shields.io/badge/GoogleMapsSDK-4.0-FF6600.svg?longCache=true)
+![color:ff69b4](https://img.shields.io/badge/Firebase-5.0.0-FF0000.svg?longCache=true)
+
 # アプリの概要
 ーーー
 このアプリは落とし物を誰かの投稿の位置情報に基づいて落とし物を見つけることや落とし物を投稿することによって誰かを助けることができるアプリです。
@@ -17,4 +23,19 @@
 - 位置情報に基づいた検索
 - 受け取り完了ボタンによりデータ削除
 - アカウント情報の編集
-- 
+- 位置情報取得
+
+# 使ったスキル一覧
+---
+- corelocation
+- Firestore
+- Firestorage
+- GoogleMapsSDK
+
+# こだわったポイント
+---
+- FloatingPanelを採用した
+- FloatingPanelにとピンに相互性を持たせてピンの大きさを変える。
+![demo](https://gyazo.com/fe7318b98609bdb8bc0093e7cda52e3a/raw)
+
+
