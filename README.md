@@ -34,15 +34,21 @@
 
 # こだわったポイント
 ---
-- FloatingPanelを採用した
-- FloatingPanelにとピンに相互性を持たせてピンの大きさを変える。
+- FloatingPanelの採用
+- FloatingPanelの表示具合
+ 落とし物は写真と落とし物の特徴でまず見つけてから落とし物の詳細を見たいと思うので、初めはtipで写真と特徴だけを表示させてfullで落とし物の情報全てが見れるようにしました。
+- FloatingPanelにとピンに相互性を持たせてピンの大きさの変化
 ![demo](https://gyazo.com/fe7318b98609bdb8bc0093e7cda52e3a/raw)
 
-- 投稿する時にカメラで撮るのかライブラリから選ぶのかの選択肢をalertActionで表示させた
-- FloatingPanelの表示具合
+- 投稿する時にカメラで撮るのかライブラリから選ぶのかの選択肢をalertActionで表示
+
 
  ![demo](https://gyazo.com/bb3a8684d647fb9714fe0505f04ae7ae/raw)
-# 苦労したポイン
+ 
+ - FloatingPanelの表示具合
+ 落とし物は写真と落とし物の特徴でまず見つけてから落とし物の詳細を見たいと思うので、初めはtipで写真と特徴だけを表示させてfullで落とし物の情報全てが見れるようにしました。
+ 
+# 苦労したポイント
 ---
 - FloatingPanelを実装したこと
 　FloatingPanelは全然記事がなく、公式の英語の記事を頑張って読んで試行錯誤しながら実装していきました。
