@@ -37,8 +37,17 @@
 - FloatingPanelを採用した
 - FloatingPanelにとピンに相互性を持たせてピンの大きさを変える。
 ![demo](https://gyazo.com/fe7318b98609bdb8bc0093e7cda52e3a/raw)
+特に大変だったソースコード
+
 - 投稿する時にカメラで撮るのかライブラリから選ぶのかの選択肢をalertActionで表示させた
+- FloatingPanelの表示具合
+　
 
 ![demo](https://gyazo.com/bb3a8684d647fb9714fe0505f04ae7ae/raw)
-
+# 苦労したポイン
+---
+- FloatingPanelを実装したこと
+　FloatingPanelは全然記事がなく、公式の英語の記事を頑張って読んで試行錯誤しながら実装していきました。
+ <https://github.com/SCENEE/FloatingPanel
+- 
 
