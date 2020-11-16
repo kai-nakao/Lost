@@ -38,6 +38,7 @@
 - FloatingPanelにとピンに相互性を持たせてピンの大きさを変える。
 ![demo](https://gyazo.com/fe7318b98609bdb8bc0093e7cda52e3a/raw)
 - 投稿する時にカメラで撮るのかライブラリから選ぶのかの選択肢をalertActionで表示させた
+
 ![demo](https://gyazo.com/bb3a8684d647fb9714fe0505f04ae7ae/raw)
 
 
