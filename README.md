@@ -41,8 +41,6 @@
 
 - 投稿する時にカメラで撮るのかライブラリから選ぶのかの選択肢をalertActionで表示させた
 - FloatingPanelの表示具合
-　
-
 ![demo](https://gyazo.com/bb3a8684d647fb9714fe0505f04ae7ae/raw)
 # 苦労したポイン
 ---
