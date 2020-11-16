@@ -52,6 +52,7 @@
  
 - FloatingPanelとピンの大きさに相互性を持たせること
 特にその中でもFloatingPanelをスワイプして消した時に選択中だったピンの大きさを元に戻すことです
+そのソースコードを共有します。
 
 
 ```swift:SearchViewController.swift
@@ -59,4 +60,8 @@ func floatingPanelWillRemove(_ fpc: FloatingPanelController) {
         selected_marker.icon = self.imageWithImage(image: UIImage(named: "pin")!, scaledToSize: CGSize(width: 32.0, height: 37.0))
     }
 ```
+
+初めはfloatingPanelDidRemoveを使っていたですがこれではそのメソッドが呼ばれるスピードが遅くなりうまくいかなかったことに気づいて英語の記事を読んでその中で近いものを試してやっとの思いでこのメソッドにたどり着きました。
+これが一番苦労したポイントです。
+
 
