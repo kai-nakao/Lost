@@ -22,7 +22,7 @@
 
 # 機能一覧
 ---
-- ログイン、アカウント作成
+- ログイン、ア(カウント作成
 - 位置情報に基づいた投稿
 - 位置情報に基づいた検索
 - 受け取り完了ボタンによりデータ削除
@@ -32,17 +32,11 @@
 # 使ったライブラリ/フレームワーク一覧
 ---
 - Core Location(https://developer.apple.com/documentation/corelocation)
-- Firestore
-- Firestorage
-- GoogleMapsSDK
-- FloatingPanel
-# 投稿の仕方
----
-トップ画面でカメラボタンを押します。
-次の画面で落とし物を見つけた場所を長押しします。
-そうするとalertActionが出るのでどちらか（カメラで撮る or ライブラリ）を選び投稿画面に細かい詳細を入力して投稿ボタンを押すと投稿完了です。
+- Firestore(https://firebase.google.com/docs/firestore?hl=ja)
+- Firestorage(https://firebase.google.com/docs/storage)
+- GoogleMapsSDK(https://developers.google.com/maps/documentation/ios-sdk/overview)
+- FloatingPanel(https://github.com/SCENEE/FloatingPanel)
 
-![demo](https://gyazo.com/78efd74ea5358f06d6434e1e00a6d2fb/raw)
 # こだわったポイント
 ---
 - FloatingPanelの採用
