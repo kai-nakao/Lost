@@ -48,7 +48,7 @@
 - FloatingPanelの表示具合
 
   落とし物を探す上で、写真と落とし物の特徴でまず見つけてから落とし物の詳細を見たいと思うので、初めはtipで写真と特徴だけを表示させてfullで落とし物の情報詳細まで見れるようにしました。
-- FloatingPanelにとピンに相互性を持たせてピンの大きさの変化
+- FloatingPanelにピンとの相互性を持たせてピンの大きさの変化
 
 ![demo](https://gyazo.com/fe7318b98609bdb8bc0093e7cda52e3a/raw)
 
