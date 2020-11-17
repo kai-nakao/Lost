@@ -28,9 +28,9 @@
 - アカウント情報の編集
 - 位置情報取得
 
-# 使ったスキル一覧
+# 使ったライブラリ/フレームワーク一覧
 ---
-- corelocation
+- Corelocation
 - Firestore
 - Firestorage
 - GoogleMapsSDK
