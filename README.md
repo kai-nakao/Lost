@@ -6,6 +6,7 @@
 ![color:ff69b4](https://img.shields.io/badge/GoogleMapsSDK-4.0-FF6600.svg?longCache=true)
 ![color:ff69b4](https://img.shields.io/badge/Firebase-5.0.0-FF0000.svg?longCache=true)
 
+
 # アプリの概要
 ---
 このアプリは落とし物を位置情報に基づいて投稿や検索ができます。
@@ -30,11 +31,11 @@
 
 # 使ったライブラリ/フレームワーク一覧
 ---
-- Corelocation
+- Core Location(https://developer.apple.com/documentation/corelocation)
 - Firestore
 - Firestorage
 - GoogleMapsSDK
-
+- FloatingPanel
 # 投稿の仕方
 ---
 トップ画面でカメラボタンを押します。
