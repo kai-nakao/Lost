@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1071207004017-f49s7g863ljqbqro8mrabhmo9ql89vgo.apps.googleusercontent.com</string>
+	<string>134616815317-6r92r8ncfofhsboa8ke2ian5uab5bv3a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1071207004017-f49s7g863ljqbqro8mrabhmo9ql89vgo</string>
+	<string>com.googleusercontent.apps.134616815317-6r92r8ncfofhsboa8ke2ian5uab5bv3a</string>
 	<key>API_KEY</key>
-	<string>AIzaSyArHL9jT4S4kLj9e6pzAm78VbvS9bqNfrU</string>
+	<string>AIzaSyCwejLDDqq76E5ssB5WWeZ6s0xmOkeoX6I</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1071207004017</string>
+	<string>134616815317</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>jp.techacademy.kai.nakao.Lost</string>
+	<string>jp.techacademy.kai.nakao.Lost20201121</string>
 	<key>PROJECT_ID</key>
-	<string>lost-370af</string>
+	<string>lost-b096e</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lost-370af.appspot.com</string>
+	<string>lost-b096e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1071207004017:ios:e5daddf6c4938a7f1068d0</string>
+	<string>1:134616815317:ios:480626732a3a7ea757345c</string>
 	<key>DATABASE_URL</key>
-	<string>https://lost-370af.firebaseio.com</string>
+	<string>https://lost-b096e.firebaseio.com</string>
 </dict>
 </plist>

@@ -48,6 +48,15 @@ class StickPinViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.latitude, zoom: 17.0)
         self.mapView.animate(to: camera)
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            return
+        }
+        
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+    }
+    
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
         let actionSheet = UIAlertController(title: "落とし物の写真", message: "全体が写っている写真にしましょう。", preferredStyle: UIAlertController.Style.actionSheet)

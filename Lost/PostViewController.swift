@@ -37,9 +37,8 @@ class PostViewController: UIViewController {
                 UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                 return
             }
-            let name = Auth.auth().currentUser?.displayName
+            
             let postDic = [
-                "name": name!,
                 "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
                 "location": self.locationTextField.text!,

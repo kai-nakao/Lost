@@ -40,29 +40,18 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         super.viewDidLoad()
         
         
-        
+        self.outletpostButton.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.outletpostButton.layer.shadowOpacity = 0.3
         self.outletpostButton.layer.cornerRadius = 10.0
         let picture = UIImage(named: "camera")
         self.outletpostButton.setImage(picture, for: .normal)
         self.outletpostButton.layer.masksToBounds = true
         
-        self.outletsettingButton.layer.cornerRadius = 10.0
-        let pictures = UIImage(named: "mypage")
-        self.outletsettingButton.setImage(pictures, for: .normal)
-        self.outletsettingButton.layer.masksToBounds = true
-        
-        
-        if Auth.auth().currentUser == nil {
-            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-            self.present(loginViewController!, animated: true, completion: nil)
-        }
-        
-        
         let camera = GMSCameraPosition.camera(withLatitude: 37.3318, longitude: -122.0312, zoom: 17.0)
         mapView = GMSMapView.map(withFrame: CGRect(origin: .zero, size: view.bounds.size), camera: camera)
         mapView.settings.myLocationButton = true //右下のボタン追加する
         mapView.isMyLocationEnabled = true
-        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
+        //mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
         
         
         mapView.delegate = self
@@ -76,27 +65,28 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         self.view.addSubview(mapView)
         self.view.bringSubviewToFront(mapView)
         self.view.bringSubviewToFront(outletpostButton)
-        self.view.bringSubviewToFront(outletsettingButton)
+        
         
         // Creates a marker in the center of the map.
         // Do any additional setup after loading the view.
     }
     func setPostData(_ postData:PostData) {
         
+        print("でばっく\(postData)")
         
-      if ( postData.latitude! != nil && postData.longitude! != nil ) {
-        let marker = GMSMarker()
+        if ( postData.latitude != nil && postData.longitude != nil ) {
+          let marker = GMSMarker()
         
-        marker.userData = postData
-        marker.position = CLLocationCoordinate2D(latitude: postData.latitude!, longitude: postData.longitude!)
-        marker.title = "Lost Thing"
-        marker.icon = UIImage(named: "pin")
+          marker.userData = postData
+          marker.position = CLLocationCoordinate2D(latitude: postData.latitude!, longitude: postData.longitude!)
+          marker.title = "Lost Thing"
+          marker.icon = UIImage(named: "pin")
         
-        marker.map = mapView
-      }
-      else {
-        print("no latitude & longitude")
-      }
+          marker.map = mapView
+        }
+        else {
+          print("no latitude & longitude")
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -115,7 +105,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         
         print("DEBUG_PRINT: viewWillAppear")
         
-        if Auth.auth().currentUser != nil {
+        
             if listener == nil {
                 let postRef = Firestore.firestore().collection(Const.PostPath)
                 listener = postRef.addSnapshotListener() { (querySnapshot, error) in
@@ -141,7 +131,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
                     postArray = []
                 }
             }
-        }
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -187,10 +176,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if Auth.auth().currentUser == nil {
-            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-            self.present(loginViewController!, animated: true, completion: nil)
-        }
+        
     }
     func imageWithImage(image: UIImage, scaledToSize newSize:CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
@@ -204,6 +190,8 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
     }
     
 }
+
+
 class MyFloatingPanelLayout: FloatingPanelLayout {
     let position: FloatingPanelPosition = .bottom
     let initialState: FloatingPanelState = .tip
