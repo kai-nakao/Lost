@@ -186,7 +186,7 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
     let initialState: FloatingPanelState = .tip
     var anchors: [FloatingPanelState : FloatingPanelLayoutAnchoring] {
         return [
-            .full: FloatingPanelLayoutAnchor(absoluteInset: 350.0, edge: .top, referenceGuide: .safeArea),
+            .full: FloatingPanelLayoutAnchor(absoluteInset: 200, edge: .top, referenceGuide: .safeArea),
             .half: FloatingPanelLayoutAnchor(absoluteInset: 200.0, edge: .bottom, referenceGuide: .safeArea),
             .tip:FloatingPanelLayoutAnchor(absoluteInset: 199, edge: .bottom, referenceGuide: .safeArea),
         ]
