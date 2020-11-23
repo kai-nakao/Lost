@@ -6,9 +6,8 @@ target 'Lost' do
   use_frameworks!
 
   # Pods for Lost
-  pod 'Firebase','6.27.0'
+  pod 'Firebase'
   pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'

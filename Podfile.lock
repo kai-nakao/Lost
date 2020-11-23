@@ -240,9 +240,6 @@ PODS:
     - Firebase/Core (= 6.27.0)
   - Firebase/Analytics (6.27.0):
     - Firebase/Core
-  - Firebase/Auth (6.27.0):
-    - Firebase/CoreOnly
-    - FirebaseAuth (~> 6.6.0)
   - Firebase/Core (6.27.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.6.1)
@@ -263,11 +260,6 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 1.30905.0)
-  - FirebaseAuth (6.6.0):
-    - FirebaseCore (~> 6.8)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (6.8.0):
     - FirebaseCoreDiagnostics (~> 1.3)
     - GoogleUtilities/Environment (~> 6.5)
@@ -297,9 +289,9 @@ PODS:
   - FirebaseStorage (3.7.0):
     - FirebaseCore (~> 6.8)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseUI/Storage (8.4.2):
-    - Firebase/Storage (~> 6.0)
-    - SDWebImage (~> 5.0)
+  - FirebaseUI/Storage (9.0.0):
+    - Firebase/Storage
+    - SDWebImage (~> 5.6)
   - FloatingPanel (2.0.1)
   - GoogleAppMeasurement (6.6.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
@@ -359,24 +351,23 @@ PODS:
     - BoringSSL-GRPC (= 0.0.7)
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
-  - GTMSessionFetcher/Core (1.4.0)
+  - GTMSessionFetcher/Core (1.5.0)
   - leveldb-library (1.22)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
-  - PromisesObjC (1.2.10)
-  - SDWebImage (5.9.1):
-    - SDWebImage/Core (= 5.9.1)
-  - SDWebImage/Core (5.9.1)
+  - PromisesObjC (1.2.11)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - CLImageEditor/AllTools (= 0.2.4)
-  - Firebase (= 6.27.0)
+  - Firebase
   - Firebase/Analytics
-  - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseUI/Storage
@@ -392,7 +383,6 @@ SPEC REPOS:
     - CLImageEditor
     - Firebase
     - FirebaseAnalytics
-    - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
@@ -420,13 +410,12 @@ SPEC CHECKSUMS:
   CLImageEditor: dc3e5358f641368da3a76fc1c744a4c2ceb270ad
   Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
   FirebaseAnalytics: 0ea640473474f036cabbc2576e20c2d63671c92f
-  FirebaseAuth: b85c064e0ac60f82486728d50a4803f235687302
   FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
   FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
   FirebaseFirestore: 5ea7b0878363f9ec66bdcee0c29ad875d1b511ac
   FirebaseInstallations: 3c520c951305cbf9ca54eb891ff9e6d1fd384881
   FirebaseStorage: af7bdbd12177cf567df00904e3e3a93704f25b15
-  FirebaseUI: e57e9b9c4340631151fbe67a14206d23d0974f37
+  FirebaseUI: f0677a1cc235f6da602cbd5c9b5fbbd24544a6b3
   FloatingPanel: 579a5ac0154f923a9d7302c4f13dbc0268511c92
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
   GoogleDataTransport: 672fb0ce96fe7f7f31d43672fca62ad2c9c86f7b
@@ -435,13 +424,13 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
-  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
-  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
+  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f55e58b431df65c96ee87833697615d3985481de
+PODFILE CHECKSUM: 2299b74bf4d0147cc48c96b4176b3668961d53e7
 
 COCOAPODS: 1.9.3

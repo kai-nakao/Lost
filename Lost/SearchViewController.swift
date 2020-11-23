@@ -76,7 +76,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         
         if ( postData.latitude != nil && postData.longitude != nil ) {
           let marker = GMSMarker()
-        
           marker.userData = postData
           marker.position = CLLocationCoordinate2D(latitude: postData.latitude!, longitude: postData.longitude!)
           marker.title = "Lost Thing"
@@ -106,31 +105,21 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
         print("DEBUG_PRINT: viewWillAppear")
         
         
-            if listener == nil {
-                let postRef = Firestore.firestore().collection(Const.PostPath)
-                listener = postRef.addSnapshotListener() { (querySnapshot, error) in
-                    if let error = error {
-                        print("DEBUG_PRINT: snapshotの取得に失敗しました。\(error)")
-                        return
-                    }
-                    self.mapView.clear()
-                    self.postArray = querySnapshot!.documents.map { document in
-                        
-                        
-                        print("DEBUG_PRINT: document取得 \(document.documentID)")
-
-                        let postData = PostData(document: document)
-                        self.setPostData(postData)
-                        return postData
-                    }
-                }
-            } else {
-                if listener != nil {
-                    listener.remove()
-                    listener = nil
-                    postArray = []
-                }
+            
+        let postRef = Firestore.firestore().collection(Const.PostPath)
+        listener = postRef.addSnapshotListener() { (querySnapshot, error) in
+            if let error = error {
+                print("DEBUG_PRINT: snapshotの取得に失敗しました。\(error)")
+                return
             }
+            self.mapView.clear()
+            self.postArray = querySnapshot!.documents.map { document in
+                print("DEBUG_PRINT: document取得 \(document.documentID)")
+                let postData = PostData(document: document)
+                self.setPostData(postData)
+                return postData
+            }
+        }
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
