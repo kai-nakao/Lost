@@ -14,12 +14,6 @@ import FloatingPanel
 
 class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, CAAnimationDelegate, FloatingPanelControllerDelegate {
     
-    @IBAction func settingButton(_ sender: Any) {
-        let settingViewController = self.storyboard?.instantiateViewController(withIdentifier: "Setting")
-        self.navigationController?.pushViewController(settingViewController!, animated: true)
-    }
-    @IBOutlet weak var outletsettingButton: UIButton!
-    
     @IBOutlet weak var outletpostButton: UIButton!
     @IBAction func postButton(_ sender: Any) {
         let stickPinViewController = self.storyboard?.instantiateViewController(withIdentifier: "StickPin")
