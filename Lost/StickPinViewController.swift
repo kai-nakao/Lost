@@ -55,6 +55,7 @@ class StickPinViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         }
         
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        locationManager.stopUpdatingLocation()
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {

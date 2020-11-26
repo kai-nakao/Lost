@@ -93,7 +93,10 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, GMSMapV
             return
         }
         
+        
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        
+        locationManager.stopUpdatingLocation()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
